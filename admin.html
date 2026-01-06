@@ -1,43 +1,176 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>DLS Admin Panel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DLS 26 Admin Panel</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500&display=swap" rel="stylesheet">
 <style>
-body{background:#111;color:#0ff;font-family:sans-serif;padding:20px}
-input,button{padding:6px;margin:4px}
-.card{border:1px solid #0ff;padding:10px;margin:10px 0}
+body {
+    background: #111;
+    color: #0ff;
+    font-family: 'Rajdhani', sans-serif;
+    padding: 20px;
+}
+h1 { text-align:center; font-family:'Orbitron', monospace; margin-bottom:20px; }
+section { margin-bottom: 40px; background: rgba(0,0,0,0.8); padding: 20px; border-radius: 15px; }
+input[type="number"], input[type="text"] {
+    width: 60px; padding: 5px; margin: 0 5px; text-align: center; border-radius: 5px; border: 1px solid #0ff; background: #222; color: #0ff;
+}
+input[type="text"] { width: 200px; }
+button { padding: 10px 20px; font-size: 16px; margin-top: 10px; cursor: pointer; background: #0ff; color: #111; border: none; border-radius: 8px; }
+table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+th, td { padding: 8px; text-align: center; border: 1px solid #0ff; }
+th { background: #000; }
+textarea { width: 100%; height: 200px; background: #111; color: #0ff; padding: 10px; border-radius: 10px; border: 1px solid #0ff; }
 </style>
 </head>
 <body>
 
-<h1>DLS 26 Admin – Enter Scores</h1>
-<div id="admin"></div>
+<h1>DLS 26 ⚽ Admin Panel</h1>
+
+<section id="teams-section">
+    <h2>Update Teams Stats</h2>
+    <div id="teams-container"></div>
+</section>
+
+<section id="fixtures-section">
+    <h2>Update Fixtures</h2>
+    <div id="fixtures-container"></div>
+</section>
+
+<button onclick="updateExport()">Update Export JSON</button>
+<h2>Export JSON</h2>
+<textarea id="export-json" readonly></textarea>
 
 <script>
-fetch('data/fixtures.json')
-.then(r=>r.json())
-.then(fixtures=>{
-  const box=document.getElementById('admin');
+// ----------------- DATA -----------------
+let teams = [
+  { "name": "Gunners", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Kilerbeen", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Barca B", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Hassanizo", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Bangladesh", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Setra FC", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Area Boyz", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Jhon XI FC", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Pochi Nene", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Rhatty FC", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Swaggz", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Abayomi", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Celesta United", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Arsenal", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Foreign FC", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "KIVURUNGWE FC", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Chelsea Lite", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Golden Champs FC", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Bobby Shmurda", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Haaram Ball", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Polymath", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Hawaii", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "King", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Lacalena", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "FC Barcelona", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Prince", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "AFRICHESTER", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "THE RIPPER", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Real Madrid FC", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "King Rovers", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 },
+  { "name": "Milano Pirates FC", "P": 0, "W": 0, "D": 0, "L": 0, "GF": 0, "GA": 0, "GD": 0, "PTS": 0 }
+];
 
-  fixtures.forEach((f,i)=>{
-    box.innerHTML+=`
-      <div class="card">
-        <b>${f.home} vs ${f.away}</b><br>
-        <input type="number" id="h${i}" placeholder="Home">
-        <input type="number" id="a${i}" placeholder="Away">
-        <button onclick="update(${i})">Generate JSON</button>
-      </div>
-    `;
-  });
+// Auto generate fixtures: 16 matches for matchday
+let fixtures = [];
+for(let i=0;i<teams.length;i+=2){
+    fixtures.push({
+        home: teams[i].name,
+        homeGoals: null,
+        away: teams[i+1].name,
+        awayGoals: null,
+        date: "2026-01-10",
+        time: "20:00"
+    });
+}
 
-  window.update=i=>{
-    fixtures[i].homeGoals=Number(document.getElementById('h'+i).value);
-    fixtures[i].awayGoals=Number(document.getElementById('a'+i).value);
-    alert(JSON.stringify(fixtures,null,2));
-  }
-});
+// ----------------- RENDER TEAMS -----------------
+function renderTeams(){
+    const container = document.getElementById("teams-container");
+    container.innerHTML = '';
+    teams.forEach((t,i)=>{
+        const div = document.createElement('div');
+        div.style.marginBottom='10px';
+        div.innerHTML = `
+            <input type="text" value="${t.name}" onchange="teams[${i}].name=this.value">
+            P:<input type="number" min="0" value="${t.P}" onchange="teams[${i}].P=parseInt(this.value)">
+            W:<input type="number" min="0" value="${t.W}" onchange="teams[${i}].W=parseInt(this.value)">
+            D:<input type="number" min="0" value="${t.D}" onchange="teams[${i}].D=parseInt(this.value)">
+            L:<input type="number" min="0" value="${t.L}" onchange="teams[${i}].L=parseInt(this.value)">
+            GF:<input type="number" min="0" value="${t.GF}" onchange="teams[${i}].GF=parseInt(this.value)">
+            GA:<input type="number" min="0" value="${t.GA}" onchange="teams[${i}].GA=parseInt(this.value)">
+            GD:<input type="number" min="0" value="${t.GD}" onchange="teams[${i}].GD=parseInt(this.value)">
+            PTS:<input type="number" min="0" value="${t.PTS}" onchange="teams[${i}].PTS=parseInt(this.value)">
+        `;
+        container.appendChild(div);
+    });
+}
+
+// ----------------- RENDER FIXTURES -----------------
+function renderFixtures(){
+    const container = document.getElementById("fixtures-container");
+    container.innerHTML='';
+    fixtures.forEach((f,i)=>{
+        const div=document.createElement('div');
+        div.style.marginBottom='10px';
+        div.innerHTML=`
+            ${f.home} vs ${f.away} 
+            <input type="number" min="0" placeholder="Home" value="${f.homeGoals!==null?f.homeGoals:''}" onchange="updateFixture(${i}, 'home', this.value)">
+            -
+            <input type="number" min="0" placeholder="Away" value="${f.awayGoals!==null?f.awayGoals:''}" onchange="updateFixture(${i}, 'away', this.value)">
+        `;
+        container.appendChild(div);
+    });
+}
+
+// ----------------- UPDATE FIXTURE -----------------
+function updateFixture(i, side, value){
+    value=value===''?null:parseInt(value);
+    if(side==='home') fixtures[i].homeGoals=value;
+    else fixtures[i].awayGoals=value;
+    recalcStats();
+}
+
+// ----------------- RECALC STATS -----------------
+function recalcStats(){
+    teams.forEach(t=>{
+        t.P=t.W=t.D=t.L=t.GF=t.GA=t.GD=t.PTS=0;
+    });
+    fixtures.forEach(f=>{
+        if(f.homeGoals===null || f.awayGoals===null) return;
+        const home=teams.find(t=>t.name===f.home);
+        const away=teams.find(t=>t.name===f.away);
+        home.P++; away.P++;
+        home.GF+=f.homeGoals; home.GA+=f.awayGoals;
+        away.GF+=f.awayGoals; away.GA+=f.homeGoals;
+        home.GD=home.GF-home.GA;
+        away.GD=away.GF-away.GA;
+        if(f.homeGoals>f.awayGoals){ home.W++; home.PTS+=3; away.L++; }
+        else if(f.homeGoals<f.awayGoals){ away.W++; away.PTS+=3; home.L++; }
+        else{ home.D++; home.PTS++; away.D++; away.PTS++; }
+    });
+    renderTeams();
+    updateExport();
+}
+
+// ----------------- EXPORT -----------------
+function updateExport(){
+    document.getElementById("export-json").value=JSON.stringify({teams,fixtures},null,2);
+}
+
+// ----------------- INIT -----------------
+renderTeams();
+renderFixtures();
+updateExport();
 </script>
 
 </body>
-  </html>
+</html>    
