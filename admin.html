@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DLS Admin Panel</title>
+<style>
+body{background:#111;color:#0ff;font-family:sans-serif;padding:20px}
+input,button{padding:6px;margin:4px}
+.card{border:1px solid #0ff;padding:10px;margin:10px 0}
+</style>
+</head>
+<body>
+
+<h1>DLS 26 Admin – Enter Scores</h1>
+<div id="admin"></div>
+
+<script>
+fetch('data/fixtures.json')
+.then(r=>r.json())
+.then(fixtures=>{
+  const box=document.getElementById('admin');
+
+  fixtures.forEach((f,i)=>{
+    box.innerHTML+=`
+      <div class="card">
+        <b>${f.home} vs ${f.away}</b><br>
+        <input type="number" id="h${i}" placeholder="Home">
+        <input type="number" id="a${i}" placeholder="Away">
+        <button onclick="update(${i})">Generate JSON</button>
+      </div>
+    `;
+  });
+
+  window.update=i=>{
+    fixtures[i].homeGoals=Number(document.getElementById('h'+i).value);
+    fixtures[i].awayGoals=Number(document.getElementById('a'+i).value);
+    alert(JSON.stringify(fixtures,null,2));
+  }
+});
+</script>
+
+</body>
+  </html>
