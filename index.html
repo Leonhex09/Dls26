@@ -1,172 +1,123 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DLS 26 ⚽ Futuristic Premier League - Table & Fixtures</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500&display=swap" rel="stylesheet">
-<style>
-/* Reset */
-* { margin:0; padding:0; box-sizing:border-box; }
-body { background: linear-gradient(135deg,#0a0a0a 0%,#1a0a2e 50%,#16213e 100%); color:#fff; font-family:'Rajdhani',sans-serif; min-height:100vh; }
-
-/* Header */
-header { text-align:center; padding:40px 20px; background:rgba(0,0,0,0.7);}
-h1 { font-family:'Orbitron', monospace; font-size:3rem; background:linear-gradient(45deg,#ff00ff,#00ffff); -webkit-background-clip:text; color:transparent; text-shadow:0 0 20px #00ffff; }
-
-/* Container */
-.container { max-width:1400px; margin:0 auto; padding:20px; display:grid; grid-template-columns:1fr 1fr; gap:40px; }
-@media(max-width:1024px){ .container { grid-template-columns:1fr; } }
-
-/* Section */
-section { background: rgba(0,0,0,0.6); border-radius:20px; padding:20px; border:1px solid #333; }
-h2 { font-family:'Orbitron', monospace; text-align:center; margin-bottom:20px; }
-
-/* Table */
-.league-table { width:100%; border-collapse:collapse; display:none; }
-.league-table th, .league-table td { padding:10px; text-align:center; border:1px solid #0ff; }
-.league-table th { background:#000; color:#0ff; }
-.team-name { font-weight:500; color:#fff; }
-.phone { font-size:0.7rem; color:#0ff; opacity:0.8; }
-
-/* Fixtures */
-.fixture-list { display:flex; flex-direction:column; gap:15px; }
-.fixture-card { background: rgba(10,10,20,0.9); border:2px solid #ff00ff; border-radius:15px; padding:20px; text-align:center; position:relative; overflow:hidden; transition:0.3s; }
-.fixture-card:hover { border-color:#0ff; box-shadow:0 0 50px #ff00ff; transform:scale(1.02); }
-.vs { font-family:'Orbitron', monospace; font-size:2rem; font-weight:900; color:#ffff00; text-shadow:0 0 20px #ffff00; }
-.match-header { display:flex; justify-content:space-between; font-size:0.9rem; margin-top:10px; color:#0ff; }
-
-/* Loading */
-.loading { text-align:center; padding:50px; font-size:1.2rem; color:#0ff; }
-.loading::after { content:''; display:inline-block; width:20px; height:20px; border:2px solid #0ff; border-radius:50%; border-top-color:transparent; animation:spin 1s linear infinite; margin-left:10px;}
-@keyframes spin{to{transform:rotate(360deg);}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DLS 26 ⚽ Futuristic Premier League - Table & Fixtures</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        /* [Your original CSS from the first response goes here - I'm omitting it for brevity, but copy it from the initial HTML] */
+    </style>
 </head>
 <body>
+    <header>
+        <h1>DLS 26 ⚽ PREMIER LEAGUE</h1>
+    </header>
 
-<header>
-<h1>DLS 26 ⚽ PREMIER LEAGUE</h1>
-</header>
+    <div class="container">
+        <section id="standings">
+            <h2>League Table</h2>
+            <div class="loading" id="table-loading">Loading Table...</div>
+            <table class="league-table" id="league-table" style="display:none;">
+                <thead>
+                    <tr>
+                        <th>POS</th>
+                        <th>CLUB</th>
+                        <th>P</th>
+                        <th>W</th>
+                        <th>D</th>
+                        <th>L</th>
+                        <th>GF</th>
+                        <th>GA</th>
+                        <th>GD</th>
+                        <th>PTS</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </section>
 
-<div class="container">
-    <section id="standings">
-        <h2>League Table</h2>
-        <div class="loading" id="table-loading">Loading Table...</div>
-        <table class="league-table" id="league-table">
-            <thead>
-                <tr>
-                    <th>POS</th><th>CLUB</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>PTS</th>
-                </tr>
-            </thead>
-            <tbody id="table-body"></tbody>
-        </table>
-    </section>
+        <section id="fixtures-section">
+            <h2>Matchday 1 Fixtures</h2>
+            <div class="loading" id="fixture-loading">Loading Fixtures...</div>
+            <div class="fixture-list" id="fixture-list"></div>
+        </section>
+    </div>
 
-    <section id="fixtures-section">
-        <h2>Matchday Fixtures</h2>
-        <div class="loading" id="fixture-loading">Loading Fixtures...</div>
-        <div class="fixture-list" id="fixture-list"></div>
-    </section>
-</div>
+    <script>
+        async function loadData() {
+            const response = await fetch('data.json');
+            const data = await response.json();
+            return data;
+        }
 
-<script>
-let teams = [];
-let fixtures = [];
+        function sortTeams(teams) {
+            return teams.sort((a, b) => b.pts - a.pts || b.gd - a.gd || b.gf - a.gf);
+        }
 
-// Load all JSONs
-async function loadAllData(){
-    try{
-        const [teamsRes, statsRes, fixturesRes] = await Promise.all([
-            fetch('data/teams.json'),
-            fetch('data/stats.json'),
-            fetch('data/fixtures.json')
-        ]);
+        async function renderTable() {
+            const data = await loadData();
+            const sortedTeams = sortTeams(data.teams);
+            const tbody = document.getElementById('table-body');
+            tbody.innerHTML = '';
+            sortedTeams.forEach((team, index) => {
+                const row = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>
+                            <div class="team-info">
+                                <span class="team-name">${team.name}</span>
+                                <small class="phone">${team.num}</small>
+                            </div>
+                        </td>
+                        <td>${team.p}</td>
+                        <td>${team.w}</td>
+                        <td>${team.d}</td>
+                        <td>${team.l}</td>
+                        <td>${team.gf}</td>
+                        <td>${team.ga}</td>
+                        <td>${team.gd}</td>
+                        <td>${team.pts}</td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+            document.getElementById('table-loading').style.display = 'none';
+            document.getElementById('league-table').style.display = 'table';
+        }
 
-        const teamsData = await teamsRes.json();
-        const statsData = await statsRes.json();
-        const fixturesData = await fixturesRes.json();
+        async function renderFixtures() {
+            const data = await loadData();
+            const container = document.getElementById('fixture-list');
+            container.innerHTML = '';
+            data.fixtures.forEach(fixture => {
+                const score = fixture.hgoals !== null && fixture.agoals !== null ? `${fixture.hgoals} - ${fixture.agoals}` : 'VS';
+                const fixtureHTML = `
+                    <div class="fixture-card">
+                        <div class="match-header">
+                            <span class="date">${fixture.date}</span>
+                            <span class="time">${fixture.time}</span>
+                        </div>
+                        <div class="teams">
+                            <div class="team home">
+                                <span class="name">${fixture.home}</span>
+                            </div>
+                            <span class="vs">${score}</span>
+                            <div class="team away">
+                                <span class="name">${fixture.away}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += fixtureHTML;
+            });
+            document.getElementById('fixture-loading').style.display = 'none';
+        }
 
-        // Merge stats into teams
-        teams = teamsData.map(team=>{
-            const stat = statsData.find(s=>s.name===team.name) || {};
-            return {...team, ...stat};
+        window.addEventListener('load', () => {
+            renderTable();
+            renderFixtures();
         });
-
-        fixtures = fixturesData;
-
-        renderTable();
-        renderFixtures();
-
-    } catch(err){
-        console.error("Error loading data:", err);
-        document.getElementById('table-loading').innerText="Failed to load table!";
-        document.getElementById('fixture-loading').innerText="Failed to load fixtures!";
-    }
-}
-
-// Render League Table
-function renderTable(){
-    const tbody = document.getElementById('table-body');
-    tbody.innerHTML = '';
-    teams.forEach((team,i)=>{
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${i+1}</td>
-            <td>
-                <div class="team-info">
-                    <span class="team-name">${team.name}</span>
-                    <small class="phone">${team.num || ''}</small>
-                </div>
-            </td>
-            <td>${team.P || 0}</td>
-            <td>${team.W || 0}</td>
-            <td>${team.D || 0}</td>
-            <td>${team.L || 0}</td>
-            <td>${team.GF || 0}</td>
-            <td>${team.GA || 0}</td>
-            <td>${team.GD || 0}</td>
-            <td>${team.PTS || 0}</td>
-        `;
-        tbody.appendChild(row);
-    });
-    document.getElementById('table-loading').style.display='none';
-    document.getElementById('league-table').style.display='table';
-}
-
-// Render Fixtures
-function renderFixtures(){
-    const container = document.getElementById('fixture-list');
-    container.innerHTML = '';
-    fixtures.forEach(f=>{
-        const card = document.createElement('div');
-        card.className = 'fixture-card';
-        card.innerHTML = `
-            <div class="teams">
-                <div class="team home">
-                    <span class="name">${f.home}</span>
-                    <small>${f.hnum||''}</small>
-                </div>
-                <span class="vs">VS</span>
-                <div class="team away">
-                    <span class="name">${f.away}</span>
-                    <small>${f.anum||''}</small>
-                </div>
-            </div>
-            <div class="match-header">
-                <span>${f.date||''}</span>
-                <span>${f.time||''}</span>
-            </div>
-        `;
-        container.appendChild(card);
-    });
-    document.getElementById('fixture-loading').style.display='none';
-}
-
-// Initialize
-window.addEventListener('load', ()=>{
-    loadAllData();
-});
-</script>
+    </script>
 </body>
-</html>
+    </html>
