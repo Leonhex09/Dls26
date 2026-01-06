@@ -1,1 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DLS 26 ⚽ Premier League</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  background:linear-gradient(135deg,#050510,#0b0b2e,#050520);
+  color:#fff;
+  font-family:'Rajdhani',sans-serif;
+}
+
+header{
+  text-align:center;
+  padding:30px;
+  background:#000;
+  border-bottom:2px solid #0ff;
+}
+
+h1{
+  font-family:'Orbitron',monospace;
+  font-size:clamp(1.8rem,5vw,3rem);
+  background:linear-gradient(90deg,#ff00ff,#00ffff,#ffff00);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.container{
+  max-width:1400px;
+  margin:auto;
+  padding:30px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+@media(max-width:900px){
+  .container{grid-template-columns:1fr}
+}
+
+section{
+  background:rgba(0,0,0,.6);
+  border-radius:16px;
+  padding:20px;
+  border:1px solid #222;
+}
+
+h2{
+  text-align:center;
+  margin-bottom:20px;
+  font-family:'Orbitron';
+  color:#0ff;
+}
+
+/* TABLE */
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:.85rem;
+}
+
+th,td{
+  padding:10px;
+  text-align:center;
+  border-bottom:1px solid #222;
+}
+
+th{
+  background:#050530;
+  color:#0ff;
+}
+
+.team-info{text-align:left}
+.team-name{font-weight:600}
+.phone{font-size:.7rem;color:#0ff}
+
+/* ZONES */
+.champion{border-left:5px solid gold}
+.relegation{border-left:5px solid red;opacity:.7}
+
+/* FIXTURES */
+.fixture-card{
+  background:#070720;
+  border:1px solid #ff00ff;
+  border-radius:12px;
+  padding:15px;
+  margin-bottom:15px;
+}
+
+.match-header{
+  display:flex;
+  justify-content:space-between;
+  color:#0ff;
+  font-size:.8rem;
+  margin-bottom:10px;
+}
+
+.teams{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.team{text-align:center}
+.team .name{font-weight:700}
+
+.home .name{color:#00ff88}
+.away .name{color:#ff6b6b}
+
+.vs{
+  font-family:'Orbitron';
+  font-size:1.5rem;
+  color:#ffff00;
+}
+
+/* LOADING */
+.loading{
+  text-align:center;
+  padding:30px;
+  color:#0ff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>DLS 26 ⚽ PREMIER LEAGUE</h1>
+</header>
+
+<div class="container">
+
+<section>
+<h2>League Table</h2>
+<div class="loading" id="table-loading">Loading table…</div>
+
+<table>
+<thead>
+<tr>
+<th>POS</th><th>CLUB</th><th>P</th><th>W</th><th>D</th><th>L</th>
+<th>GF</th><th>GA</th><th>GD</th><th>PTS</th>
+</tr>
+</thead>
+<tbody id="table-body"></tbody>
+</table>
+</section>
+
+<section>
+<h2>Fixtures</h2>
+<div class="loading" id="fixture-loading">Loading fixtures…</div>
+<div id="fixture-list"></div>
+</section>
+
+</div>
+
+<script>
+let teams=[], fixtures=[];
+
+async function loadData(){
+  teams = await fetch('data/teams.json').then(r=>r.json());
+  fixtures = await fetch('data/fixtures.json').then(r=>r.json());
+}
+
+function calculateTable(){
+  teams.forEach(t=>{
+    t.P=t.W=t.D=t.L=t.GF=t.GA=t.PTS=0;
+  });
+
+  fixtures.forEach(f=>{
+    if(f.homeGoals===null||f.awayGoals===null) return;
+
+    const h=teams.find(t=>t.name===f.home);
+    const a=teams.find(t=>t.name===f.away);
+
+    h.P++; a.P++;
+    h.GF+=f.homeGoals; h.GA+=f.awayGoals;
+    a.GF+=f.awayGoals; a.GA+=f.homeGoals;
+
+    if(f.homeGoals>f.awayGoals){h.W++;a.L++;h.PTS+=3}
+    else if(f.homeGoals<f.awayGoals){a.W++;h.L++;a.PTS+=3}
+    else{h.D++;a.D++;h.PTS++;a.PTS++}
+  });
+
+  teams.sort((a,b)=>
+    b.PTS-a.PTS ||
+    (b.GF-b.GA)-(a.GF-a.GA) ||
+    b.GF-a.GF
+  );
+}
+
+function renderTable(){
+  const body=document.getElementById('table-body');
+  body.innerHTML='';
+
+  teams.forEach((t,i)=>{
+    let zone='';
+    if(i<4) zone='champion';
+    if(i>=teams.length-4) zone='relegation';
+
+    body.innerHTML+=`
+    <tr class="${zone}">
+      <td>${i+1}</td>
+      <td class="team-info">
+        <span class="team-name">${t.name}</span>
+        <small class="phone">${t.num}</small>
+      </td>
+      <td>${t.P}</td><td>${t.W}</td><td>${t.D}</td><td>${t.L}</td>
+      <td>${t.GF}</td><td>${t.GA}</td><td>${t.GF-t.GA}</td><td>${t.PTS}</td>
+    </tr>`;
+  });
+
+  document.getElementById('table-loading').style.display='none';
+}
+
+function renderFixtures(){
+  const list=document.getElementById('fixture-list');
+  list.innerHTML='';
+
+  fixtures.forEach(f=>{
+    list.innerHTML+=`
+    <div class="fixture-card">
+      <div class="match-header">
+        <span>${f.date}</span>
+        <span>${f.time}</span>
+      </div>
+      <div class="teams">
+        <div class="team home">
+          <span class="name">${f.home}</span>
+          <small>${f.homeGoals ?? '-'}</small>
+        </div>
+        <span class="vs">VS</span>
+        <div class="team away">
+          <span class="name">${f.away}</span>
+          <small>${f.awayGoals ?? '-'}</small>
+        </div>
+      </div>
+    </div>`;
+  });
+
+  document.getElementById('fixture-loading').style.display='none';
+}
+
+window.onload=async()=>{
+  await loadData();
+  calculateTable();
+  renderTable();
+  renderFixtures();
+};
+</script>
+
+</body>
+  </html>
