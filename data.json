@@ -35,6 +35,18 @@
       "ga": 0,
       "gd": 0,
       "pts": 0
+    },
+    {
+      "name": "Inter miami",
+      "contact": "+256 744 660665",
+      "p": 0,
+      "w": 0,
+      "d": 0,
+      "l": 0,
+      "gf": 0,
+      "ga": 0,
+      "gd": 0,
+      "pts": 0
     }
   ],
   "fixtures": [
@@ -64,6 +76,60 @@
       "date": "2026-01-09",
       "time": "20:00",
       "matchday": 6
+    },
+    {
+      "home": "Driver fc",
+      "away": "Inter miami",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-09",
+      "time": "20:00",
+      "matchday": 7
+    },
+    {
+      "home": "Straight unity",
+      "away": "Africhester",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-09",
+      "time": "20:00",
+      "matchday": 7
+    },
+    {
+      "home": "Driver fc",
+      "away": "Africhester",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-10",
+      "time": "20:00",
+      "matchday": 9
+    },
+    {
+      "home": "Inter miami",
+      "away": "Straight unity",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-10",
+      "time": "20:00",
+      "matchday": 9
+    },
+    {
+      "home": "Driver fc",
+      "away": "Straight unity",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-11",
+      "time": "20:00",
+      "matchday": 12
+    },
+    {
+      "home": "Africhester",
+      "away": "Inter miami",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-11",
+      "time": "20:00",
+      "matchday": 12
     }
   ]
 }
