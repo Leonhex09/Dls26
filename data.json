@@ -11,7 +11,29 @@
       "ga": 0,
       "gd": 0,
       "pts": 0
+    },
+    {
+      "name": "Hex",
+      "contact": "000066467",
+      "p": 0,
+      "w": 0,
+      "d": 0,
+      "l": 0,
+      "gf": 0,
+      "ga": 0,
+      "gd": 0,
+      "pts": 0
     }
   ],
-  "fixtures": []
+  "fixtures": [
+    {
+      "home": "Hex",
+      "away": "Africhester",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-08",
+      "time": "20:00",
+      "matchday": 1
+    }
+  ]
 }
