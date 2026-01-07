@@ -35,6 +35,18 @@
       "ga": 0,
       "gd": 0,
       "pts": 0
+    },
+    {
+      "name": "Apps dooms",
+      "contact": "+256 709 187830",
+      "p": 0,
+      "w": 0,
+      "d": 0,
+      "l": 0,
+      "gf": 0,
+      "ga": 0,
+      "gd": 0,
+      "pts": 0
     }
   ],
   "fixtures": [
@@ -64,6 +76,33 @@
       "date": "2026-01-10",
       "time": "20:00",
       "matchday": 2
+    },
+    {
+      "home": "Serenity",
+      "away": "Apps dooms",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-11",
+      "time": "20:00",
+      "matchday": 3
+    },
+    {
+      "home": "Intermiami",
+      "away": "Apps dooms",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-12",
+      "time": "20:00",
+      "matchday": 3
+    },
+    {
+      "home": "Africhester",
+      "away": "Apps dooms",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-13",
+      "time": "20:00",
+      "matchday": 3
     }
   ]
 }
