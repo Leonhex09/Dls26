@@ -23,6 +23,18 @@
       "ga": 3,
       "gd": -3,
       "pts": 0
+    },
+    {
+      "name": "Africhester",
+      "contact": "+256779085558",
+      "p": 0,
+      "w": 0,
+      "d": 0,
+      "l": 0,
+      "gf": 0,
+      "ga": 0,
+      "gd": 0,
+      "pts": 0
     }
   ],
   "fixtures": [
@@ -34,6 +46,33 @@
       "date": "2026-01-07",
       "time": "20:00",
       "matchday": 1
+    },
+    {
+      "home": "Straight unity",
+      "away": "Africhester",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-07",
+      "time": "20:00",
+      "matchday": 2
+    },
+    {
+      "home": "Driver fc",
+      "away": "Africhester",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-08",
+      "time": "20:00",
+      "matchday": 4
+    },
+    {
+      "home": "Driver fc",
+      "away": "Straight unity",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-09",
+      "time": "20:00",
+      "matchday": 7
     }
   ]
 }
