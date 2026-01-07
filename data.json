@@ -27,13 +27,13 @@
     {
       "name": "Driver fc",
       "contact": "+256 709 187830",
-      "p": 0,
+      "p": 1,
       "w": 0,
       "d": 0,
-      "l": 0,
+      "l": 1,
       "gf": 0,
-      "ga": 0,
-      "gd": 0,
+      "ga": 4,
+      "gd": -4,
       "pts": 0
     },
     {
@@ -51,14 +51,14 @@
     {
       "name": "Africhester",
       "contact": "+256779085558",
-      "p": 0,
-      "w": 0,
+      "p": 1,
+      "w": 1,
       "d": 0,
       "l": 0,
-      "gf": 0,
+      "gf": 4,
       "ga": 0,
-      "gd": 0,
-      "pts": 0
+      "gd": 4,
+      "pts": 3
     }
   ],
   "fixtures": [
@@ -110,8 +110,8 @@
     {
       "home": "Africhester",
       "away": "Driver fc",
-      "hgoals": null,
-      "agoals": null,
+      "hgoals": 4,
+      "agoals": 0,
       "date": "2026-01-09",
       "time": "20:00",
       "matchday": 6
