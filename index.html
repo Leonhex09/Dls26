@@ -99,7 +99,6 @@
         text-shadow: 0 0 20px rgba(0,255,255,0.5);
     }
 
-    /* Mobile-first table */
     .table-wrapper {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -109,7 +108,7 @@
 
     .league-table {
         width: 100%;
-        min-width: 600px; /* forces horizontal scroll on small screens */
+        min-width: 600px;
         border-collapse: collapse;
         font-size: 0.95rem;
     }
@@ -155,7 +154,6 @@
         margin-top: 4px;
     }
 
-    /* Fixtures */
     .fixture-list { 
         display: flex; 
         flex-direction: column; 
@@ -245,7 +243,6 @@
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* Larger screens - optional two-column layout */
     @media (min-width: 992px) {
         .container {
             grid-template-columns: 1fr 1fr;
@@ -256,7 +253,6 @@
         .table-wrapper { margin: 0; padding: 0; }
     }
 
-    /* Touch feedback for mobile */
     @media (hover: none) {
         .fixture-card:active {
             transform: translateY(-5px) scale(1.02);
@@ -302,93 +298,93 @@
 </div>
 
 <script>
-    // Alert for new users only once
-    if (!localStorage.getItem('dls26-welcome')) {
-        alert("Welcome to DLS 26 ⚽ Premier League! Swipe left/right on the table to see all stats.");
-        localStorage.setItem('dls26-welcome', 'shown');
-    }
+if (!localStorage.getItem('dls26-welcome')) {
+    alert("Welcome to DLS 26 ⚽ Premier League! Swipe left/right on the table to see all stats.");
+    localStorage.setItem('dls26-welcome', 'shown');
+}
 
-    async function loadData() {
-        const response = await fetch('data.json?' + new Date().getTime());
-        return await response.json();
-    }
+async function loadData() {
+    const response = await fetch('data.json?' + new Date().getTime());
+    const data = await response.json();
+    // Fill missing contacts for old teams
+    data.teams.forEach(t => { if(!t.contact) t.contact = "N/A"; });
+    return data;
+}
 
-    function sortTeams(teams) {
-        return teams.sort((a, b) => {
-            if (b.pts !== a.pts) return b.pts - a.pts;
-            if (b.gd !== a.gd) return b.gd - a.gd;
-            return b.gf - a.gf;
-        });
-    }
+function sortTeams(teams) {
+    return teams.sort((a, b) => {
+        if (b.pts !== a.pts) return b.pts - a.pts;
+        if (b.gd !== a.gd) return b.gd - a.gd;
+        return b.gf - a.gf;
+    });
+}
 
-    async function renderTable() {
-        const data = await loadData();
-        const sortedTeams = sortTeams(data.teams);
-        const tbody = document.getElementById('table-body');
-        tbody.innerHTML = '';
-        sortedTeams.forEach((team, index) => {
-            tbody.innerHTML += `
-                <tr>
-                    <td>${index + 1}</td>
-                    <td class="team-info-cell">
-                        <div class="team-info">
-                            <span class="team-name">${team.name}</span>
-                            <small class="phone">${team.num}</small>
-                        </div>
-                    </td>
-                    <td>${team.p}</td>
-                    <td>${team.w}</td>
-                    <td>${team.d}</td>
-                    <td>${team.l}</td>
-                    <td>${team.gf}</td>
-                    <td>${team.ga}</td>
-                    <td>${team.gd}</td>
-                    <td>${team.pts}</td>
-                </tr>
-            `;
-        });
-        document.getElementById('table-loading').style.display = 'none';
-        document.getElementById('league-table').style.display = 'table';
-    }
-
-    async function renderFixtures() {
-        const data = await loadData();
-        const container = document.getElementById('fixture-list');
-        container.innerHTML = '';
-        data.fixtures.forEach(f => {
-            const score = f.hgoals !== null && f.agoals !== null ? `${f.hgoals} - ${f.agoals}` : 'VS';
-            container.innerHTML += `
-                <div class="fixture-card">
-                    <div class="match-header">
-                        <span class="date">${f.date}</span>
-                        <span class="time">${f.time}</span>
+async function renderTable() {
+    const data = await loadData();
+    const sortedTeams = sortTeams(data.teams);
+    const tbody = document.getElementById('table-body');
+    tbody.innerHTML = '';
+    sortedTeams.forEach((team, index) => {
+        tbody.innerHTML += `
+            <tr>
+                <td>${index + 1}</td>
+                <td class="team-info-cell">
+                    <div class="team-info">
+                        <span class="team-name">${team.name}</span>
+                        <small class="phone">${team.contact || "N/A"}</small>
                     </div>
-                    <div class="teams">
-                        <div class="team home">
-                            <span class="name">${f.home}</span>
-                        </div>
-                        <span class="vs">${score}</span>
-                        <div class="team away">
-                            <span class="name">${f.away}</span>
-                        </div>
+                </td>
+                <td>${team.p}</td>
+                <td>${team.w}</td>
+                <td>${team.d}</td>
+                <td>${team.l}</td>
+                <td>${team.gf}</td>
+                <td>${team.ga}</td>
+                <td>${team.gd}</td>
+                <td>${team.pts}</td>
+            </tr>
+        `;
+    });
+    document.getElementById('table-loading').style.display = 'none';
+    document.getElementById('league-table').style.display = 'table';
+}
+
+async function renderFixtures() {
+    const data = await loadData();
+    const container = document.getElementById('fixture-list');
+    container.innerHTML = '';
+    data.fixtures.forEach(f => {
+        const score = f.hgoals !== null && f.agoals !== null ? `${f.hgoals} - ${f.agoals}` : 'VS';
+        container.innerHTML += `
+            <div class="fixture-card">
+                <div class="match-header">
+                    <span class="date">${f.date}</span>
+                    <span class="time">${f.time}</span>
+                </div>
+                <div class="teams">
+                    <div class="team home">
+                        <span class="name">${f.home}</span>
+                    </div>
+                    <span class="vs">${score}</span>
+                    <div class="team away">
+                        <span class="name">${f.away}</span>
                     </div>
                 </div>
-            `;
-        });
-        document.getElementById('fixture-loading').style.display = 'none';
-    }
+            </div>
+        `;
+    });
+    document.getElementById('fixture-loading').style.display = 'none';
+}
 
-    // Refresh every 30 seconds
-    setInterval(() => {
-        renderTable();
-        renderFixtures();
-    }, 30000);
+setInterval(() => {
+    renderTable();
+    renderFixtures();
+}, 30000);
 
-    // Initial load
-    window.onload = () => {
-        renderTable();
-        renderFixtures();
-    };
+window.onload = () => {
+    renderTable();
+    renderFixtures();
+};
 </script>
 </body>
    </html>
