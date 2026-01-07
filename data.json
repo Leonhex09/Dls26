@@ -27,38 +27,38 @@
     {
       "name": "Driver fc",
       "contact": "+256 709 187830",
-      "p": 2,
-      "w": 1,
+      "p": 0,
+      "w": 0,
       "d": 0,
-      "l": 1,
-      "gf": 3,
-      "ga": 4,
-      "gd": -1,
-      "pts": 3
+      "l": 0,
+      "gf": 0,
+      "ga": 0,
+      "gd": 0,
+      "pts": 0
     },
     {
       "name": "Straight unit",
       "contact": "+256 788 228821",
-      "p": 1,
+      "p": 0,
       "w": 0,
       "d": 0,
-      "l": 1,
+      "l": 0,
       "gf": 0,
-      "ga": 3,
-      "gd": -3,
+      "ga": 0,
+      "gd": 0,
       "pts": 0
     },
     {
       "name": "Africhester",
       "contact": "+256779085558",
-      "p": 1,
-      "w": 1,
+      "p": 0,
+      "w": 0,
       "d": 0,
       "l": 0,
-      "gf": 4,
+      "gf": 0,
       "ga": 0,
-      "gd": 4,
-      "pts": 3
+      "gd": 0,
+      "pts": 0
     },
     {
       "name": "Inter miami",
@@ -77,8 +77,8 @@
     {
       "home": "Driver fc",
       "away": "Straight unit",
-      "hgoals": 3,
-      "agoals": 0,
+      "hgoals": null,
+      "agoals": null,
       "date": "2026-01-07",
       "time": "20:00",
       "matchday": 1
@@ -86,8 +86,8 @@
     {
       "home": "Africhester",
       "away": "Driver fc",
-      "hgoals": 4,
-      "agoals": 0,
+      "hgoals": null,
+      "agoals": null,
       "date": "2026-01-09",
       "time": "20:00",
       "matchday": 6
