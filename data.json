@@ -147,26 +147,26 @@
     {
       "name": "Celesta United",
       "num": "+255776497284",
-      "p": 0,
+      "p": 1,
       "w": 0,
-      "d": 0,
+      "d": 1,
       "l": 0,
       "gf": 0,
       "ga": 0,
       "gd": 0,
-      "pts": 0
+      "pts": 1
     },
     {
       "name": "Arsenal",
       "num": "+2348106538387",
-      "p": 0,
+      "p": 1,
       "w": 0,
-      "d": 0,
+      "d": 1,
       "l": 0,
       "gf": 0,
       "ga": 0,
       "gd": 0,
-      "pts": 0
+      "pts": 1
     },
     {
       "name": "Foreign FC",
@@ -443,8 +443,8 @@
     {
       "home": "Celesta United",
       "away": "Arsenal",
-      "hgoals": null,
-      "agoals": null,
+      "hgoals": 0,
+      "agoals": 0,
       "date": "2026-01-10",
       "time": "20:00",
       "matchday": 1
