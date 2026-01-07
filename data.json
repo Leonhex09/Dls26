@@ -71,6 +71,18 @@
       "ga": 0,
       "gd": 0,
       "pts": 0
+    },
+    {
+      "name": "Toxic",
+      "contact": "+256 700 725080",
+      "p": 0,
+      "w": 0,
+      "d": 0,
+      "l": 0,
+      "gf": 0,
+      "ga": 0,
+      "gd": 0,
+      "pts": 0
     }
   ],
   "fixtures": [
@@ -298,6 +310,195 @@
       "date": "2026-01-15",
       "time": "20:00",
       "matchday": 30
+    },
+    {
+      "home": "Straight unity",
+      "away": "Toxic",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-15",
+      "time": "20:00",
+      "matchday": 31
+    },
+    {
+      "home": "Africhester",
+      "away": "Toxic",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-15",
+      "time": "20:00",
+      "matchday": 31
+    },
+    {
+      "home": "Inter miami",
+      "away": "Kams fc",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-15",
+      "time": "20:00",
+      "matchday": 31
+    },
+    {
+      "home": "Driver fc",
+      "away": "Toxic",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-16",
+      "time": "20:00",
+      "matchday": 33
+    },
+    {
+      "home": "Straight unity",
+      "away": "Kams fc",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-16",
+      "time": "20:00",
+      "matchday": 33
+    },
+    {
+      "home": "Africhester",
+      "away": "Inter miami",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-16",
+      "time": "20:00",
+      "matchday": 33
+    },
+    {
+      "home": "Driver fc",
+      "away": "Toxic",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-17",
+      "time": "20:00",
+      "matchday": 36
+    },
+    {
+      "home": "Toxic",
+      "away": "Kams fc",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-17",
+      "time": "20:00",
+      "matchday": 36
+    },
+    {
+      "home": "Straight unity",
+      "away": "Africhester",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-17",
+      "time": "20:00",
+      "matchday": 36
+    },
+    {
+      "home": "Driver fc",
+      "away": "Kams fc",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-18",
+      "time": "20:00",
+      "matchday": 40
+    },
+    {
+      "home": "Toxic",
+      "away": "Inter miami",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-18",
+      "time": "20:00",
+      "matchday": 40
+    },
+    {
+      "home": "Toxic",
+      "away": "Africhester",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-18",
+      "time": "20:00",
+      "matchday": 40
+    },
+    {
+      "home": "Driver fc",
+      "away": "Inter miami",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-19",
+      "time": "20:00",
+      "matchday": 45
+    },
+    {
+      "home": "Kams fc",
+      "away": "Africhester",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-19",
+      "time": "20:00",
+      "matchday": 45
+    },
+    {
+      "home": "Toxic",
+      "away": "Straight unity",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-19",
+      "time": "20:00",
+      "matchday": 45
+    },
+    {
+      "home": "Driver fc",
+      "away": "Africhester",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-20",
+      "time": "20:00",
+      "matchday": 51
+    },
+    {
+      "home": "Inter miami",
+      "away": "Straight unity",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-20",
+      "time": "20:00",
+      "matchday": 51
+    },
+    {
+      "home": "Toxic",
+      "away": "Toxic",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-20",
+      "time": "20:00",
+      "matchday": 51
+    },
+    {
+      "home": "Driver fc",
+      "away": "Straight unity",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-21",
+      "time": "20:00",
+      "matchday": 58
+    },
+    {
+      "home": "Inter miami",
+      "away": "Toxic",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-21",
+      "time": "20:00",
+      "matchday": 58
+    },
+    {
+      "home": "Kams fc",
+      "away": "Toxic",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-21",
+      "time": "20:00",
+      "matchday": 58
     }
   ]
 }
