@@ -316,25 +316,25 @@
     {
       "name": "AFRICHESTER",
       "num": "+256779085558",
-      "p": 0,
-      "w": 0,
+      "p": 1,
+      "w": 1,
       "d": 0,
       "l": 0,
-      "gf": 0,
+      "gf": 5,
       "ga": 0,
-      "gd": 0,
-      "pts": 0
+      "gd": 5,
+      "pts": 3
     },
     {
       "name": "THE RIPPER",
       "num": "+255676450400",
-      "p": 0,
+      "p": 1,
       "w": 0,
       "d": 0,
-      "l": 0,
+      "l": 1,
       "gf": 0,
-      "ga": 0,
-      "gd": 0,
+      "ga": 5,
+      "gd": -5,
       "pts": 0
     },
     {
@@ -494,8 +494,8 @@
     {
       "home": "AFRICHESTER",
       "away": "THE RIPPER",
-      "hgoals": null,
-      "agoals": null,
+      "hgoals": 5,
+      "agoals": 0,
       "date": "2026-01-10",
       "time": "20:00"
     },
