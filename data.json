@@ -47,6 +47,18 @@
       "ga": 0,
       "gd": 0,
       "pts": 0
+    },
+    {
+      "name": "Kams fc",
+      "contact": "+256 746 089600",
+      "p": 0,
+      "w": 0,
+      "d": 0,
+      "l": 0,
+      "gf": 0,
+      "ga": 0,
+      "gd": 0,
+      "pts": 0
     }
   ],
   "fixtures": [
@@ -103,6 +115,96 @@
       "date": "2026-01-09",
       "time": "20:00",
       "matchday": 6
+    },
+    {
+      "home": "Straight unity",
+      "away": "Kams fc",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-09",
+      "time": "20:00",
+      "matchday": 7
+    },
+    {
+      "home": "Africhester",
+      "away": "Inter miami",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-09",
+      "time": "20:00",
+      "matchday": 7
+    },
+    {
+      "home": "Driver fc",
+      "away": "Kams fc",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-10",
+      "time": "20:00",
+      "matchday": 9
+    },
+    {
+      "home": "Straight unity",
+      "away": "Africhester",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-10",
+      "time": "20:00",
+      "matchday": 9
+    },
+    {
+      "home": "Driver fc",
+      "away": "Inter miami",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-11",
+      "time": "20:00",
+      "matchday": 12
+    },
+    {
+      "home": "Kams fc",
+      "away": "Africhester",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-11",
+      "time": "20:00",
+      "matchday": 12
+    },
+    {
+      "home": "Driver fc",
+      "away": "Africhester",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-12",
+      "time": "20:00",
+      "matchday": 16
+    },
+    {
+      "home": "Inter miami",
+      "away": "Straight unity",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-12",
+      "time": "20:00",
+      "matchday": 16
+    },
+    {
+      "home": "Driver fc",
+      "away": "Straight unity",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-13",
+      "time": "20:00",
+      "matchday": 21
+    },
+    {
+      "home": "Inter miami",
+      "away": "Kams fc",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-13",
+      "time": "20:00",
+      "matchday": 21
     }
   ]
 }
