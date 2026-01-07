@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,8 +96,17 @@
             color: transparent;
             text-shadow: 0 0 20px rgba(0,255,255,0.5);
         }
+
+        /* Scrollable table wrapper */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
         .league-table {
             width: 100%;
+            min-width: 800px; /* ensure table is readable on small screens */
             border-collapse: collapse;
             font-size: 0.9rem;
         }
@@ -230,23 +240,25 @@
         <section id="standings">
             <h2>League Table</h2>
             <div class="loading" id="table-loading">Loading Table...</div>
-            <table class="league-table" id="league-table" style="display:none;">
-                <thead>
-                    <tr>
-                        <th>POS</th>
-                        <th>CLUB</th>
-                        <th>MP</th>
-                        <th>W</th>
-                        <th>D</th>
-                        <th>L</th>
-                        <th>GF</th>
-                        <th>GA</th>
-                        <th>GD</th>
-                        <th>PTS</th>
-                    </tr>
-                </thead>
-                <tbody id="table-body"></tbody>
-            </table>
+            <div class="table-wrapper">
+                <table class="league-table" id="league-table" style="display:none;">
+                    <thead>
+                        <tr>
+                            <th>POS</th>
+                            <th>CLUB</th>
+                            <th>MP</th>
+                            <th>W</th>
+                            <th>D</th>
+                            <th>L</th>
+                            <th>GF</th>
+                            <th>GA</th>
+                            <th>GD</th>
+                            <th>PTS</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
         </section>
 
         <section id="fixtures-section">
@@ -339,4 +351,4 @@
         };
     </script>
 </body>
-                </html>
+</html>
