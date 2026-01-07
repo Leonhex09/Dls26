@@ -219,25 +219,25 @@
     {
       "name": "Bobby Shmurda",
       "num": "+2349112918725",
-      "p": 1,
-      "w": 0,
+      "p": 2,
+      "w": 1,
       "d": 1,
       "l": 0,
-      "gf": 2,
-      "ga": 2,
-      "gd": 0,
-      "pts": 1
+      "gf": 5,
+      "ga": 3,
+      "gd": 2,
+      "pts": 4
     },
     {
       "name": "Haaram Ball",
       "num": "+263785221050",
-      "p": 1,
+      "p": 2,
       "w": 0,
       "d": 1,
-      "l": 0,
-      "gf": 2,
-      "ga": 2,
-      "gd": 0,
+      "l": 1,
+      "gf": 3,
+      "ga": 5,
+      "gd": -2,
       "pts": 1
     },
     {
@@ -526,8 +526,8 @@
     {
       "home": "Bobby Shmurda",
       "away": "Haaram Ball",
-      "hgoals": null,
-      "agoals": null,
+      "hgoals": 3,
+      "agoals": 1,
       "date": "2026-01-12",
       "time": "20:00",
       "matchday": 2
@@ -666,6 +666,15 @@
       "date": "2026-01-27",
       "time": "20:00",
       "matchday": 17
+    },
+    {
+      "home": "Bobby Shmurda",
+      "away": "Haaram Ball",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-28",
+      "time": "20:00",
+      "matchday": 18
     }
   ]
 }
