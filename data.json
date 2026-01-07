@@ -243,50 +243,50 @@
     {
       "name": "Polymath",
       "num": "+2348123485886",
-      "p": 0,
+      "p": 1,
       "w": 0,
-      "d": 0,
+      "d": 1,
       "l": 0,
-      "gf": 0,
-      "ga": 0,
+      "gf": 1,
+      "ga": 1,
       "gd": 0,
-      "pts": 0
+      "pts": 1
     },
     {
       "name": "Hawaii",
       "num": "+255745723311",
-      "p": 0,
+      "p": 1,
       "w": 0,
-      "d": 0,
+      "d": 1,
       "l": 0,
-      "gf": 0,
-      "ga": 0,
+      "gf": 1,
+      "ga": 1,
       "gd": 0,
-      "pts": 0
+      "pts": 1
     },
     {
       "name": "King",
       "num": "+8801339-433379",
-      "p": 0,
+      "p": 1,
       "w": 0,
-      "d": 0,
+      "d": 1,
       "l": 0,
-      "gf": 0,
-      "ga": 0,
+      "gf": 1,
+      "ga": 1,
       "gd": 0,
-      "pts": 0
+      "pts": 1
     },
     {
       "name": "Lacalena",
       "num": "+27 78 653 2163",
-      "p": 0,
+      "p": 1,
       "w": 0,
-      "d": 0,
+      "d": 1,
       "l": 0,
-      "gf": 0,
-      "ga": 0,
+      "gf": 1,
+      "ga": 1,
       "gd": 0,
-      "pts": 0
+      "pts": 1
     },
     {
       "name": "FC Barcelona",
@@ -469,16 +469,16 @@
     {
       "home": "Polymath",
       "away": "Hawaii",
-      "hgoals": null,
-      "agoals": null,
+      "hgoals": 1,
+      "agoals": 1,
       "date": "2026-01-10",
       "time": "20:00"
     },
     {
       "home": "King",
       "away": "Lacalena",
-      "hgoals": null,
-      "agoals": null,
+      "hgoals": 1,
+      "agoals": 1,
       "date": "2026-01-10",
       "time": "20:00"
     },
@@ -612,6 +612,24 @@
       "date": "2026-01-21",
       "time": "20:00",
       "matchday": 11
+    },
+    {
+      "home": "Polymath",
+      "away": "Hawaii",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-22",
+      "time": "20:00",
+      "matchday": 12
+    },
+    {
+      "home": "King",
+      "away": "Lacalena",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-23",
+      "time": "20:00",
+      "matchday": 13
     }
   ]
 }
