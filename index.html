@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,7 +109,7 @@
 
     .league-table {
         width: 100%;
-        min-width: 600px;
+        min-width: 700px;
         border-collapse: collapse;
         font-size: 0.95rem;
     }
@@ -128,37 +129,16 @@
         min-width: 140px;
     }
 
-    .league-table th.team-info-cell {
-        z-index: 10;
-    }
+    .league-table th.team-info-cell { z-index: 10; }
 
     .league-table tbody tr:nth-child(even) { background: rgba(0,255,255,0.03); }
-    .league-table tbody tr:hover {
-        background: rgba(255,0,255,0.15);
-        box-shadow: 0 8px 20px rgba(255,0,255,0.3);
-    }
+    .league-table tbody tr:hover { background: rgba(255,0,255,0.15); box-shadow: 0 8px 20px rgba(255,0,255,0.3); }
 
-    .team-name { 
-        font-weight: 600; 
-        font-size: 1rem; 
-        color: #ffffff; 
-        text-shadow: 0 0 5px #00ffff; 
-        display: block;
-    }
-    .phone { 
-        display: block; 
-        font-size: 0.75rem; 
-        color: #00ffff; 
-        opacity: 0.8; 
-        font-family: monospace; 
-        margin-top: 4px;
-    }
+    .team-name { font-weight: 600; font-size: 1rem; color: #ffffff; text-shadow: 0 0 5px #00ffff; display: block; }
+    .phone { display: block; font-size: 0.75rem; color: #00ffff; opacity: 0.8; font-family: monospace; margin-top: 4px; }
+    .form { display: block; font-size: 0.75rem; color: #ffdd00; margin-top: 2px; }
 
-    .fixture-list { 
-        display: flex; 
-        flex-direction: column; 
-        gap: 20px; 
-    }
+    .fixture-list { display: flex; flex-direction: column; gap: 20px; }
 
     .fixture-card {
         background: rgba(10,10,20,0.9);
@@ -181,83 +161,25 @@
     }
     @keyframes bounce { 0%,20%,50%,80%,100% { transform: translateY(0); } 40% { transform: translateY(-10px); } 60% { transform: translateY(-5px); } }
 
-    .fixture-card:hover, .fixture-card:active {
-        border-color: #00ffff;
-        box-shadow: 0 0 40px rgba(255,0,255,0.6), 0 0 80px rgba(0,255,255,0.4);
-        transform: translateY(-8px) scale(1.03);
-    }
+    .fixture-card:hover, .fixture-card:active { border-color: #00ffff; box-shadow: 0 0 40px rgba(255,0,255,0.6), 0 0 80px rgba(0,255,255,0.4); transform: translateY(-8px) scale(1.03); }
 
-    .match-header {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 15px;
-        font-size: 0.9rem;
-        color: #00ffff;
-        text-shadow: 0 0 8px #00ffff;
-    }
+    .match-header { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 0.9rem; color: #00ffff; text-shadow: 0 0 8px #00ffff; }
 
-    .teams {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-    }
-
-    .team .name {
-        display: block;
-        font-weight: 700;
-        font-size: 1.15rem;
-        margin-bottom: 4px;
-        text-shadow: 0 0 10px currentColor;
-    }
-
+    .teams { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .team .name { display: block; font-weight: 700; font-size: 1.15rem; margin-bottom: 4px; text-shadow: 0 0 10px currentColor; }
     .home .name { color: #00ff88; }
     .away .name { color: #ff6b6b; }
 
-    .vs {
-        font-family: 'Orbitron', monospace;
-        font-size: 2.2rem;
-        font-weight: 900;
-        color: #ffff00;
-        text-shadow: 0 0 20px #ffff00;
-        animation: pulse 1.8s infinite;
-        min-width: 80px;
-    }
+    .vs { font-family: 'Orbitron', monospace; font-size: 2.2rem; font-weight: 900; color: #ffff00; text-shadow: 0 0 20px #ffff00; animation: pulse 1.8s infinite; min-width: 80px; }
     @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.15); opacity: 0.8; } }
 
-    .loading {
-        text-align: center;
-        padding: 40px;
-        font-size: 1.1rem;
-        color: #00ffff;
-    }
-    .loading::after {
-        content: '';
-        display: inline-block;
-        width: 18px; height: 18px;
-        border: 2px solid #00ffff;
-        border-radius: 50%;
-        border-top-color: transparent;
-        animation: spin 1s linear infinite;
-        margin-left: 10px;
-    }
+    .loading { text-align: center; padding: 40px; font-size: 1.1rem; color: #00ffff; }
+    .loading::after { content: ''; display: inline-block; width: 18px; height: 18px; border: 2px solid #00ffff; border-radius: 50%; border-top-color: transparent; animation: spin 1s linear infinite; margin-left: 10px; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    @media (min-width: 992px) {
-        .container {
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            padding: 40px 20px;
-        }
-        h2 { font-size: 1.8rem; }
-        .table-wrapper { margin: 0; padding: 0; }
-    }
+    @media (min-width: 992px) { .container { grid-template-columns: 1fr 1fr; gap: 40px; padding: 40px 20px; } h2 { font-size: 1.8rem; } .table-wrapper { margin: 0; padding: 0; } }
 
-    @media (hover: none) {
-        .fixture-card:active {
-            transform: translateY(-5px) scale(1.02);
-        }
-    }
+    @media (hover: none) { .fixture-card:active { transform: translateY(-5px) scale(1.02); } }
 </style>
 </head>
 <body>
@@ -283,6 +205,7 @@
                         <th>GA</th>
                         <th>GD</th>
                         <th>PTS</th>
+                        <th>Form</th>
                     </tr>
                 </thead>
                 <tbody id="table-body"></tbody>
@@ -291,7 +214,7 @@
     </section>
 
     <section id="fixtures-section">
-        <h2>Matchday 1 Fixtures</h2>
+        <h2>Matchday Fixtures</h2>
         <div class="loading" id="fixture-loading">Loading Fixtures...</div>
         <div class="fixture-list" id="fixture-list"></div>
     </section>
@@ -306,17 +229,31 @@ if (!localStorage.getItem('dls26-welcome')) {
 async function loadData() {
     const response = await fetch('data.json?' + new Date().getTime());
     const data = await response.json();
-    // Fill missing contacts for old teams
+    // Fill missing contacts
     data.teams.forEach(t => { if(!t.contact) t.contact = "N/A"; });
     return data;
 }
 
 function sortTeams(teams) {
-    return teams.sort((a, b) => {
-        if (b.pts !== a.pts) return b.pts - a.pts;
-        if (b.gd !== a.gd) return b.gd - a.gd;
-        return b.gf - a.gf;
+    return teams.sort((a,b)=>{
+        if(b.pts!==a.pts) return b.pts-a.pts;
+        if(b.gd!==a.gd) return b.gd-a.gd;
+        return b.gf-a.gf;
     });
+}
+
+function getLast5Form(teamName, fixtures) {
+    const played = fixtures
+        .filter(f => f.hgoals !== null && f.agoals !== null)
+        .filter(f => f.home === teamName || f.away === teamName)
+        .sort((a,b)=> new Date(a.date)-new Date(b.date));
+    const last5 = played.slice(-5).map(f=>{
+        const isHome = f.home===teamName;
+        const gf = isHome?f.hgoals:f.agoals;
+        const ga = isHome?f.agoals:f.hgoals;
+        return gf>ga?"W":gf===ga?"D":"L";
+    });
+    return last5.join(" ");
 }
 
 async function renderTable() {
@@ -324,64 +261,57 @@ async function renderTable() {
     const sortedTeams = sortTeams(data.teams);
     const tbody = document.getElementById('table-body');
     tbody.innerHTML = '';
-    sortedTeams.forEach((team, index) => {
+    sortedTeams.forEach((team,index)=>{
         tbody.innerHTML += `
-            <tr>
-                <td>${index + 1}</td>
-                <td class="team-info-cell">
-                    <div class="team-info">
-                        <span class="team-name">${team.name}</span>
-                        <small class="phone">${team.contact || "N/A"}</small>
-                    </div>
-                </td>
-                <td>${team.p}</td>
-                <td>${team.w}</td>
-                <td>${team.d}</td>
-                <td>${team.l}</td>
-                <td>${team.gf}</td>
-                <td>${team.ga}</td>
-                <td>${team.gd}</td>
-                <td>${team.pts}</td>
-            </tr>
-        `;
+        <tr>
+            <td>${index+1}</td>
+            <td class="team-info-cell">
+                <span class="team-name">${team.name}</span>
+                <small class="phone">${team.contact}</small>
+            </td>
+            <td>${team.p}</td>
+            <td>${team.w}</td>
+            <td>${team.d}</td>
+            <td>${team.l}</td>
+            <td>${team.gf}</td>
+            <td>${team.ga}</td>
+            <td>${team.gd}</td>
+            <td>${team.pts}</td>
+            <td class="form">${getLast5Form(team.name, data.fixtures)}</td>
+        </tr>`;
     });
-    document.getElementById('table-loading').style.display = 'none';
-    document.getElementById('league-table').style.display = 'table';
+    document.getElementById('table-loading').style.display='none';
+    document.getElementById('league-table').style.display='table';
 }
 
 async function renderFixtures() {
     const data = await loadData();
     const container = document.getElementById('fixture-list');
     container.innerHTML = '';
-    data.fixtures.forEach(f => {
-        const score = f.hgoals !== null && f.agoals !== null ? `${f.hgoals} - ${f.agoals}` : 'VS';
+    data.fixtures.forEach(f=>{
+        const score = f.hgoals!==null && f.agoals!==null ? `${f.hgoals} - ${f.agoals}` : 'VS';
         container.innerHTML += `
-            <div class="fixture-card">
-                <div class="match-header">
-                    <span class="date">${f.date}</span>
-                    <span class="time">${f.time}</span>
-                </div>
-                <div class="teams">
-                    <div class="team home">
-                        <span class="name">${f.home}</span>
-                    </div>
-                    <span class="vs">${score}</span>
-                    <div class="team away">
-                        <span class="name">${f.away}</span>
-                    </div>
-                </div>
+        <div class="fixture-card">
+            <div class="match-header">
+                <span class="date">${f.date}</span>
+                <span class="time">${f.time}</span>
             </div>
-        `;
+            <div class="teams">
+                <div class="team home"><span class="name">${f.home}</span></div>
+                <span class="vs">${score}</span>
+                <div class="team away"><span class="name">${f.away}</span></div>
+            </div>
+        </div>`;
     });
-    document.getElementById('fixture-loading').style.display = 'none';
+    document.getElementById('fixture-loading').style.display='none';
 }
 
-setInterval(() => {
+setInterval(()=>{
     renderTable();
     renderFixtures();
-}, 30000);
+},30000);
 
-window.onload = () => {
+window.onload = ()=>{
     renderTable();
     renderFixtures();
 };
