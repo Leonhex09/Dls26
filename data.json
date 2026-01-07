@@ -3,26 +3,26 @@
     {
       "name": "Serenity",
       "contact": "+256 788 228821",
-      "p": 0,
+      "p": 1,
       "w": 0,
       "d": 0,
-      "l": 0,
-      "gf": 0,
-      "ga": 0,
-      "gd": 0,
+      "l": 1,
+      "gf": 2,
+      "ga": 5,
+      "gd": -3,
       "pts": 0
     },
     {
       "name": "Apps dooms",
       "contact": "+256 709 187830",
-      "p": 0,
-      "w": 0,
+      "p": 1,
+      "w": 1,
       "d": 0,
       "l": 0,
-      "gf": 0,
-      "ga": 0,
-      "gd": 0,
-      "pts": 0
+      "gf": 5,
+      "ga": 2,
+      "gd": 3,
+      "pts": 3
     },
     {
       "name": "Africhester",
@@ -53,8 +53,8 @@
     {
       "home": "Apps dooms",
       "away": "Serenity",
-      "hgoals": null,
-      "agoals": null,
+      "hgoals": 5,
+      "agoals": 2,
       "date": "2026-01-08",
       "time": "20:00",
       "matchday": 1
