@@ -74,8 +74,8 @@
     {
       "home": "Driver fc",
       "away": "Straight unit",
-      "hgoals": null,
-      "agoals": null,
+      "hgoals": 3,
+      "agoals": 0,
       "date": "2026-01-07",
       "time": "20:00",
       "matchday": 1
