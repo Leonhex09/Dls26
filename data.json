@@ -51,6 +51,15 @@
   ],
   "fixtures": [
     {
+      "home": "Driver fc",
+      "away": "Inter miami",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-07",
+      "time": "20:00",
+      "matchday": 1
+    },
+    {
       "home": "Straight unity",
       "away": "Africhester",
       "hgoals": null,
@@ -69,6 +78,15 @@
       "matchday": 3
     },
     {
+      "home": "Inter miami",
+      "away": "Straight unity",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-08",
+      "time": "20:00",
+      "matchday": 3
+    },
+    {
       "home": "Driver fc",
       "away": "Straight unity",
       "hgoals": null,
@@ -78,58 +96,13 @@
       "matchday": 6
     },
     {
-      "home": "Driver fc",
-      "away": "Inter miami",
-      "hgoals": null,
-      "agoals": null,
-      "date": "2026-01-09",
-      "time": "20:00",
-      "matchday": 7
-    },
-    {
-      "home": "Straight unity",
-      "away": "Africhester",
-      "hgoals": null,
-      "agoals": null,
-      "date": "2026-01-09",
-      "time": "20:00",
-      "matchday": 7
-    },
-    {
-      "home": "Driver fc",
-      "away": "Africhester",
-      "hgoals": null,
-      "agoals": null,
-      "date": "2026-01-10",
-      "time": "20:00",
-      "matchday": 9
-    },
-    {
-      "home": "Inter miami",
-      "away": "Straight unity",
-      "hgoals": null,
-      "agoals": null,
-      "date": "2026-01-10",
-      "time": "20:00",
-      "matchday": 9
-    },
-    {
-      "home": "Driver fc",
-      "away": "Straight unity",
-      "hgoals": null,
-      "agoals": null,
-      "date": "2026-01-11",
-      "time": "20:00",
-      "matchday": 12
-    },
-    {
       "home": "Africhester",
       "away": "Inter miami",
       "hgoals": null,
       "agoals": null,
-      "date": "2026-01-11",
+      "date": "2026-01-09",
       "time": "20:00",
-      "matchday": 12
+      "matchday": 6
     }
   ]
 }
