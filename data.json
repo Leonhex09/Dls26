@@ -75,49 +75,49 @@
     {
       "name": "Area Boyz",
       "num": "+260770052740",
-      "p": 0,
-      "w": 0,
+      "p": 1,
+      "w": 1,
       "d": 0,
       "l": 0,
-      "gf": 0,
-      "ga": 0,
-      "gd": 0,
-      "pts": 0
+      "gf": 5,
+      "ga": 2,
+      "gd": 3,
+      "pts": 3
     },
     {
       "name": "Jhon XI FC",
       "num": "+260972208054",
-      "p": 0,
+      "p": 1,
       "w": 0,
       "d": 0,
-      "l": 0,
-      "gf": 0,
-      "ga": 0,
-      "gd": 0,
+      "l": 1,
+      "gf": 2,
+      "ga": 5,
+      "gd": -3,
       "pts": 0
     },
     {
       "name": "Pochi Nene",
       "num": "+255777113693",
-      "p": 0,
-      "w": 0,
+      "p": 1,
+      "w": 1,
       "d": 0,
       "l": 0,
-      "gf": 0,
-      "ga": 0,
-      "gd": 0,
-      "pts": 0
+      "gf": 5,
+      "ga": 2,
+      "gd": 3,
+      "pts": 3
     },
     {
       "name": "Rhatty FC",
       "num": "+2348032299483",
-      "p": 0,
+      "p": 1,
       "w": 0,
       "d": 0,
-      "l": 0,
-      "gf": 0,
-      "ga": 0,
-      "gd": 0,
+      "l": 1,
+      "gf": 2,
+      "ga": 5,
+      "gd": -3,
       "pts": 0
     },
     {
@@ -413,16 +413,16 @@
     {
       "home": "Area Boyz",
       "away": "Jhon XI FC",
-      "hgoals": null,
-      "agoals": null,
+      "hgoals": 5,
+      "agoals": 2,
       "date": "2026-01-10",
       "time": "20:00"
     },
     {
       "home": "Pochi Nene",
       "away": "Rhatty FC",
-      "hgoals": null,
-      "agoals": null,
+      "hgoals": 5,
+      "agoals": 2,
       "date": "2026-01-10",
       "time": "20:00"
     },
@@ -558,6 +558,24 @@
       "date": "2026-01-15",
       "time": "20:00",
       "matchday": 5
+    },
+    {
+      "home": "Area Boyz",
+      "away": "Jhon XI FC",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-16",
+      "time": "20:00",
+      "matchday": 6
+    },
+    {
+      "home": "Pochi Nene",
+      "away": "Rhatty FC",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-17",
+      "time": "20:00",
+      "matchday": 7
     }
   ]
 }
