@@ -47,6 +47,18 @@
       "ga": 0,
       "gd": 0,
       "pts": 0
+    },
+    {
+      "name": "Africhester",
+      "contact": "+256779085558",
+      "p": 0,
+      "w": 0,
+      "d": 0,
+      "l": 0,
+      "gf": 0,
+      "ga": 0,
+      "gd": 0,
+      "pts": 0
     }
   ],
   "fixtures": [
@@ -139,6 +151,96 @@
       "date": "2026-01-11",
       "time": "20:00",
       "matchday": 13
+    },
+    {
+      "home": "Kams fc",
+      "away": "Africhester",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-11",
+      "time": "20:00",
+      "matchday": 14
+    },
+    {
+      "home": "Driver fc",
+      "away": "Straight unit",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-11",
+      "time": "20:00",
+      "matchday": 14
+    },
+    {
+      "home": "Toxic",
+      "away": "Africhester",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-12",
+      "time": "20:00",
+      "matchday": 16
+    },
+    {
+      "home": "Kams fc",
+      "away": "Driver fc",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-12",
+      "time": "20:00",
+      "matchday": 16
+    },
+    {
+      "home": "Toxic",
+      "away": "Straight unit",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-13",
+      "time": "20:00",
+      "matchday": 19
+    },
+    {
+      "home": "Africhester",
+      "away": "Driver fc",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-13",
+      "time": "20:00",
+      "matchday": 19
+    },
+    {
+      "home": "Toxic",
+      "away": "Driver fc",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-14",
+      "time": "20:00",
+      "matchday": 23
+    },
+    {
+      "home": "Straight unit",
+      "away": "Kams fc",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-14",
+      "time": "20:00",
+      "matchday": 23
+    },
+    {
+      "home": "Toxic",
+      "away": "Kams fc",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-15",
+      "time": "20:00",
+      "matchday": 28
+    },
+    {
+      "home": "Straight unit",
+      "away": "Africhester",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-15",
+      "time": "20:00",
+      "matchday": 28
     }
   ]
 }
