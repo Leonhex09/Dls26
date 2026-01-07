@@ -211,7 +211,7 @@
     }
   ],
   "settings": {
-    "matchdayInterval": 7,
+    "matchdayInterval": 1,
     "startDate": "2026-01-07"
   }
 }
