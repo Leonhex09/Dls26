@@ -3,26 +3,26 @@
     {
       "name": "Gunners",
       "num": "+27712756504",
-      "p": 0,
+      "p": 1,
       "w": 0,
-      "d": 0,
+      "d": 1,
       "l": 0,
-      "gf": 0,
-      "ga": 0,
+      "gf": 2,
+      "ga": 2,
       "gd": 0,
-      "pts": 0
+      "pts": 1
     },
     {
       "name": "Kilerbeen",
       "num": "+2349123653575",
-      "p": 0,
+      "p": 1,
       "w": 0,
-      "d": 0,
+      "d": 1,
       "l": 0,
-      "gf": 0,
-      "ga": 0,
+      "gf": 2,
+      "ga": 2,
       "gd": 0,
-      "pts": 0
+      "pts": 1
     },
     {
       "name": "Barca B",
@@ -389,8 +389,8 @@
     {
       "home": "Gunners",
       "away": "Kilerbeen",
-      "hgoals": null,
-      "agoals": null,
+      "hgoals": 2,
+      "agoals": 2,
       "date": "2026-01-10",
       "time": "20:00",
       "matchday": 1
