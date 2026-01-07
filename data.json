@@ -11,7 +11,29 @@
       "ga": 0,
       "gd": 0,
       "pts": 0
+    },
+    {
+      "name": "Kams fc",
+      "contact": "+256 746 089600",
+      "p": 0,
+      "w": 0,
+      "d": 0,
+      "l": 0,
+      "gf": 0,
+      "ga": 0,
+      "gd": 0,
+      "pts": 0
     }
   ],
-  "fixtures": []
+  "fixtures": [
+    {
+      "home": "Toxic",
+      "away": "Kams fc",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-07",
+      "time": "20:00",
+      "matchday": 1
+    }
+  ]
 }
