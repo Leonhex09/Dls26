@@ -55,6 +55,18 @@
       "ga": 0,
       "gd": 0,
       "pts": 0
+    },
+    {
+      "name": "Apps",
+      "contact": "07764464644",
+      "p": 0,
+      "w": 0,
+      "d": 0,
+      "l": 0,
+      "gf": 0,
+      "ga": 0,
+      "gd": 0,
+      "pts": 0
     }
   ],
   "fixtures": [
@@ -93,6 +105,51 @@
       "date": "2026-01-11",
       "time": "20:00",
       "matchday": 1
+    },
+    {
+      "home": "Apps",
+      "away": "Serenity fc",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-16",
+      "time": "20:00",
+      "matchday": 2
+    },
+    {
+      "home": "Apps",
+      "away": "Africhester",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-17",
+      "time": "20:00",
+      "matchday": 2
+    },
+    {
+      "home": "Apps",
+      "away": "Apps dooms",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-18",
+      "time": "20:00",
+      "matchday": 2
+    },
+    {
+      "home": "Apps",
+      "away": "Karabi rift",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-19",
+      "time": "20:00",
+      "matchday": 2
+    },
+    {
+      "home": "Apps",
+      "away": "Serenity",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-20",
+      "time": "20:00",
+      "matchday": 2
     }
   ]
 }
