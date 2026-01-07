@@ -23,7 +23,47 @@
       "ga": 0,
       "gd": 0,
       "pts": 0
+    },
+    {
+      "name": "Africhester",
+      "contact": "+256779085558",
+      "p": 0,
+      "w": 0,
+      "d": 0,
+      "l": 0,
+      "gf": 0,
+      "ga": 0,
+      "gd": 0,
+      "pts": 0
     }
   ],
-  "fixtures": []
+  "fixtures": [
+    {
+      "home": "Serenity",
+      "away": "Intermiami",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-08",
+      "time": "20:00",
+      "matchday": 1
+    },
+    {
+      "home": "Serenity",
+      "away": "Africhester",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-09",
+      "time": "20:00",
+      "matchday": 2
+    },
+    {
+      "home": "Intermiami",
+      "away": "Africhester",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-10",
+      "time": "20:00",
+      "matchday": 2
+    }
+  ]
 }
