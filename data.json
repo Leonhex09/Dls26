@@ -99,26 +99,26 @@
     {
       "name": "Pochi Nene",
       "num": "+255777113693",
-      "p": 0,
+      "p": 1,
       "w": 0,
-      "d": 0,
+      "d": 1,
       "l": 0,
-      "gf": 0,
-      "ga": 0,
+      "gf": 3,
+      "ga": 3,
       "gd": 0,
-      "pts": 0
+      "pts": 1
     },
     {
       "name": "Rhatty FC",
       "num": "+2348032299483",
-      "p": 0,
+      "p": 1,
       "w": 0,
-      "d": 0,
+      "d": 1,
       "l": 0,
-      "gf": 0,
-      "ga": 0,
+      "gf": 3,
+      "ga": 3,
       "gd": 0,
-      "pts": 0
+      "pts": 1
     },
     {
       "name": "Swaggz",
@@ -425,8 +425,8 @@
     {
       "home": "Pochi Nene",
       "away": "Rhatty FC",
-      "hgoals": null,
-      "agoals": null,
+      "hgoals": 3,
+      "agoals": 3,
       "date": "2026-01-10",
       "time": "20:00",
       "matchday": 1
