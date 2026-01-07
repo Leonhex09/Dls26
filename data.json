@@ -35,6 +35,18 @@
       "ga": 0,
       "gd": 0,
       "pts": 0
+    },
+    {
+      "name": "Inter miami",
+      "contact": "+256 744 660665",
+      "p": 0,
+      "w": 0,
+      "d": 0,
+      "l": 0,
+      "gf": 0,
+      "ga": 0,
+      "gd": 0,
+      "pts": 0
     }
   ],
   "fixtures": [
@@ -64,6 +76,33 @@
       "date": "2026-01-11",
       "time": "20:00",
       "matchday": 2
+    },
+    {
+      "home": "Inter miami",
+      "away": "Serenity",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-15",
+      "time": "20:00",
+      "matchday": 3
+    },
+    {
+      "home": "Inter miami",
+      "away": "Apps dooms",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-16",
+      "time": "20:00",
+      "matchday": 3
+    },
+    {
+      "home": "Inter miami",
+      "away": "Africhester",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-17",
+      "time": "20:00",
+      "matchday": 3
     }
   ]
 }
