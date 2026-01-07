@@ -315,26 +315,26 @@
     {
       "name": "AFRICHESTER",
       "num": "+256779085558",
-      "p": 1,
+      "p": 2,
       "w": 1,
       "d": 0,
-      "l": 0,
-      "gf": 8,
-      "ga": 2,
-      "gd": 6,
+      "l": 1,
+      "gf": 9,
+      "ga": 5,
+      "gd": 4,
       "pts": 3
     },
     {
       "name": "THE RIPPER",
       "num": "+255676450400",
-      "p": 1,
-      "w": 0,
+      "p": 2,
+      "w": 1,
       "d": 0,
       "l": 1,
-      "gf": 2,
-      "ga": 8,
-      "gd": -6,
-      "pts": 0
+      "gf": 5,
+      "ga": 9,
+      "gd": -4,
+      "pts": 3
     },
     {
       "name": "Real Madrid FC",
@@ -517,8 +517,8 @@
     {
       "home": "AFRICHESTER",
       "away": "THE RIPPER",
-      "hgoals": null,
-      "agoals": null,
+      "hgoals": 1,
+      "agoals": 3,
       "date": "2026-01-11",
       "time": "20:00",
       "matchday": 1
@@ -657,6 +657,15 @@
       "date": "2026-01-26",
       "time": "20:00",
       "matchday": 16
+    },
+    {
+      "home": "AFRICHESTER",
+      "away": "THE RIPPER",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-27",
+      "time": "20:00",
+      "matchday": 17
     }
   ]
 }
