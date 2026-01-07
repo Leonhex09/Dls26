@@ -291,14 +291,14 @@
     {
       "name": "FC Barcelona",
       "num": "0746146574",
-      "p": 1,
-      "w": 1,
+      "p": 2,
+      "w": 2,
       "d": 0,
       "l": 0,
-      "gf": 3,
-      "ga": 2,
-      "gd": 1,
-      "pts": 3
+      "gf": 5,
+      "ga": 3,
+      "gd": 2,
+      "pts": 6
     },
     {
       "name": "Prince",
@@ -339,25 +339,25 @@
     {
       "name": "Real Madrid FC",
       "num": "+2349020243269",
-      "p": 0,
-      "w": 0,
+      "p": 1,
+      "w": 1,
       "d": 0,
       "l": 0,
-      "gf": 0,
-      "ga": 0,
-      "gd": 0,
-      "pts": 0
+      "gf": 3,
+      "ga": 2,
+      "gd": 1,
+      "pts": 3
     },
     {
       "name": "King Rovers",
       "num": "060 897 9191",
-      "p": 0,
+      "p": 1,
       "w": 0,
       "d": 0,
-      "l": 0,
-      "gf": 0,
-      "ga": 0,
-      "gd": 0,
+      "l": 1,
+      "gf": 2,
+      "ga": 3,
+      "gd": -1,
       "pts": 0
     },
     {
@@ -375,13 +375,13 @@
     {
       "name": "Milano Pirates FC",
       "num": "+27717720231",
-      "p": 0,
+      "p": 1,
       "w": 0,
       "d": 0,
-      "l": 0,
-      "gf": 0,
-      "ga": 0,
-      "gd": 0,
+      "l": 1,
+      "gf": 1,
+      "ga": 2,
+      "gd": -1,
       "pts": 0
     }
   ],
@@ -501,16 +501,16 @@
     {
       "home": "Real Madrid FC",
       "away": "King Rovers",
-      "hgoals": null,
-      "agoals": null,
+      "hgoals": 3,
+      "agoals": 2,
       "date": "2026-01-10",
       "time": "20:00"
     },
     {
       "home": "FC Barcelona",
       "away": "Milano Pirates FC",
-      "hgoals": null,
-      "agoals": null,
+      "hgoals": 2,
+      "agoals": 1,
       "date": "2026-01-10",
       "time": "20:00"
     },
@@ -630,6 +630,33 @@
       "date": "2026-01-23",
       "time": "20:00",
       "matchday": 13
+    },
+    {
+      "home": "Prince",
+      "away": "Real Madrid FC",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-24",
+      "time": "20:00",
+      "matchday": 14
+    },
+    {
+      "home": "FC Barcelona",
+      "away": "King Rovers",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-25",
+      "time": "20:00",
+      "matchday": 15
+    },
+    {
+      "home": "FC Barcelona",
+      "away": "Milano Pirates FC",
+      "hgoals": null,
+      "agoals": null,
+      "date": "2026-01-26",
+      "time": "20:00",
+      "matchday": 16
     }
   ]
 }
