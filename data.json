@@ -15,13 +15,13 @@
     {
       "name": "Kams fc",
       "contact": "+256 746 089600",
-      "p": 0,
+      "p": 1,
       "w": 0,
       "d": 0,
-      "l": 0,
-      "gf": 0,
-      "ga": 0,
-      "gd": 0,
+      "l": 1,
+      "gf": 1,
+      "ga": 7,
+      "gd": -6,
       "pts": 0
     },
     {
@@ -39,14 +39,14 @@
     {
       "name": "Straight unit",
       "contact": "+256 788 228821",
-      "p": 2,
-      "w": 0,
+      "p": 3,
+      "w": 1,
       "d": 0,
       "l": 2,
-      "gf": 1,
-      "ga": 5,
-      "gd": -4,
-      "pts": 0
+      "gf": 8,
+      "ga": 6,
+      "gd": 2,
+      "pts": 3
     },
     {
       "name": "Africhester",
@@ -167,8 +167,8 @@
     {
       "home": "Straight unit",
       "away": "Kams fc",
-      "hgoals": null,
-      "agoals": null,
+      "hgoals": 7,
+      "agoals": 1,
       "date": "2026-01-10",
       "time": "20:00",
       "matchday": 4
